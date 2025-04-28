@@ -28,7 +28,7 @@ class AddExpenseActivity : AppCompatActivity() {
 
     private fun addExpense() {
         val expenseName = expenseNameEditText.text.toString().trim()
-        val expenseAmountString = expenseAmountEditText.text.toString().trim()
+        val expenseAmountString = expenseAmountESditText.text.toString().trim()
 
         if (expenseName.isEmpty() || expenseAmountString.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
