@@ -1,28 +1,18 @@
 package com.example.controlefinanceiro
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
-import com.example.controlefinanceiro.ui.theme.ControleFinanceiroTheme
+import com.example.expensetracker.LoginActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            ControleFinanceiroTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background,
-                ) {
-                    // Substitua BakingScreen por FinancialControlScreen
-                    FinancialControlScreen()  // Aqui chamamos a função da tela de controle financeiro
-                }
-            }
-        }
+        // Start LoginActivity
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+
+        // Finish MainActivity so the user can't navigate back to it from LoginActivity
+        finish()
     }
 }
